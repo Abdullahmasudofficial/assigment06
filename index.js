@@ -64,7 +64,7 @@ fetch(url)
 
 })
 
-
+removeActiveClassmeansection()
 }
 
 
@@ -76,7 +76,7 @@ const displayTheLoadTreeCategories=(categories)=>{
         categorieCard.innerHTML +=`
       
         
-      <button  onclick="loadCategoriesdetailsInCard('${categorie.id}')" class="   text-[#1F2937] font-semibold p-2 text-lg"> ${categorie.category_name} </button>
+      <button id="cetegorie-btn-${categorie.id}" onclick="loadCategoriesdetailsInCard('${categorie.id}')" class=" hover:bg-green-100 rounded-lg w-1/2 text-left  text-[#1F2937] ctgry-button p-2 text-lg"> ${categorie.category_name} </button>
 
         `
 
@@ -87,15 +87,33 @@ const displayTheLoadTreeCategories=(categories)=>{
 
 }
 
+const removeActiveClass=()=>{
+  const ctgrybutton=document.querySelectorAll(".ctgry-button")
+  ctgrybutton.forEach(btn=>btn.classList.remove("activeee"))
+}
+
+const removeActiveClassmeansection=()=>{
+  const ctgrybuttonn=document.querySelector(".ctgrybuttonnn")
+  ctgrybuttonn.classList.remove("activeee")
+}
+
+
 
 const loadCategoriesdetailsInCard=(id)=>{
   manageSpinnerForCetegory(true)
     const url=`https://openapi.programming-hero.com/api/category/${id}`
     fetch(url)
     .then((response)=>response.json())
-    .then((data)=> displayTheTreeInContainerFromApi(data.plants))
-
+    .then((data)=>{
+      removeActiveClass();
+      const clickbtn=document.getElementById(`cetegorie-btn-${id}`);
+      clickbtn.classList.add("activeee")
+    
+       displayTheTreeInContainerFromApi(data.plants)
+    }
   
+  
+  )
   }
 
 const displayTheTreeInContainerFromApi =(trees)=>{
@@ -107,7 +125,7 @@ trees.forEach(tree => {
   const treeCard=document.createElement("div");
   treeCard.innerHTML=` 
   
-  <div class="" >
+  <div onclick="loadModalfromApi(${tree.id})" class="" >
          <section class="  ">
 
          <div class="rounded-t-lg-2xl h-[190px]" >
@@ -115,7 +133,7 @@ trees.forEach(tree => {
          </div>
 
          
-         <div class="p-5 rounded-b-xl bg-white">
+         <div class=" p-5 rounded-b-xl bg-white">
           <h1 class="font-bold"> ${tree.name}</h1>
           <p class="text-sm text-gray-700" >${tree.description}  </p>
 
@@ -247,12 +265,52 @@ const manageSpinnerForCetegory=(status)=>{
 }
 
 
-loadTreeCategoriesFromApi()
+
+
+
+const loadModalfromApi=(id)=>{
+
+const url =`https://openapi.programming-hero.com/api/plant/${id}`
+console.log(url)
+fetch(url)
+.then(response=>response.json())
+.then((data)=>displayModalFromApi(data.plants))
+
+}
+
+
+
+const displayModalFromApi=(plant)=>{
+console.log(plant)
+const aboutModal=document.getElementById("modal-container");
+
+aboutModal.innerHTML=`  
+<div class="rounded-t-lg-2xl h-[190px]" >
+         <img class=" rounded-t-xl h-full w-full object-cover" src="${plant.image}" alt="">
+         </div>
+
+         
+         <div class=" p-5 rounded-b-xl bg-white">
+          <h1 class="font-bold"> ${plant.name}</h1>
+          <p class="text-sm text-gray-700" >${plant.description}  </p>
+
+          <div class="my-4 flex items-center justify-between">
+            <h1 class="text-green-800 rounded px-2 bg-[#DCFCE7]" >${plant.category}</h1>
+            <p class="font-bold">$ <span> ${plant.price}</span> </p>
+          </div>
+
+
+
+`;
 
 
 
 
+document.getElementById("myModal").showModal()
+}
 
+
+ loadTreeCategoriesFromApi()
 
 
 
