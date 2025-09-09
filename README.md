@@ -1,169 +1,28 @@
-## WELCOME TO ( সহজ সরল সিম্পল ) ASSIGNMENT-006
 
-### 📅 Deadline For 60 marks: 9th September, 2025 (11:59 pm ⏱️)
-
-### 📅 Deadline For 50 marks : 13th September , 2025 (6:00 pm⏱️)
-
-### 📅 Deadline For 30 marks: Any time after 13the September , 2025 (6:01 pm⏱️).
-
----
-# Green Earth
-
-
-## Private Repository: https://classroom.github.com/a/nVZrg5R9 
-
-## Alternative Private Repository: https://classroom.github.com/a/KCGI14ST 
-
-## Alternative Private Repository: https://classroom.github.com/a/JMuIYqgK 
-
-
----
-🌴 API Endpoints
----
-1. Get 🌴All Plants
-```bash
-https://openapi.programming-hero.com/api/plants
-```
-
-2. Get 🌴All categories <br/>
-```bash
-https://openapi.programming-hero.com/api/categories
-```
-
-
-3. Get 🌴plants by categories <br/>
-```bash
-https://openapi.programming-hero.com/api/category/${id}
-```
-
-```bash
-https://openapi.programming-hero.com/api/category/1
-```
-
-4. Get 🌴Plants Detail <br/>
-
-```bash
-https://openapi.programming-hero.com/api/plant/${id}
-```
-
-```bash
-https://openapi.programming-hero.com/api/plant/1
-```
----
-
-
-
-
-## ✅ Main Requirements 
-
-#### 1) Navbar
-
-- Website **logo/name** on the **left**  
-- **Menu items** in the **center** 
-- **Plant a Tree button** on the **right** 
-
-#### 2) Banner 
-- A **background image**  
-- A **title** and **subtitle**  
-- A **centered button**  
-
-#### 3) About Campaign
-- **Section heading**  
-- **Image on the left**, **text on the right**  
-
-#### 4) Our Impact Section 
-- Show **3 cards** with campaign **statistics**  
-
-#### 5) Plant a Tree Today Section & Footer
-- **Form**: Name, Email, Number of Trees  
-- **Footer** with copyright info 
-
-#### 6) Responsiveness 
-- Website must be **mobile responsive**  
-
----
-#### 7) Create a README file to answer the following question-
+<!-- Create a README file to answer the following question- -->
 
 
 #### 1) What is the difference between var, let, and const?
-
+ answer :- var is old system and let ,const is updated.
+ let and const is block scoped ...and we not can't re-assign .
+ let return in hoisting ( undefind )
+let,const return in hoisting ( error ) that means not usable 
 #### 2) What is the difference between map(), forEach(), and filter()? 
+map():- create new element and return expect value;we use this for create a new array from an array and also we can change the value ;
+
+forEach():- it's like (for of) (loop ) but forEach return undefind ,forEach is  usable for work every item of an element
+
+filter():- it's work with condition ,when the condition is true returnd new array with filtered items and we are use this for filtering an array
+
 
 #### 3) What are arrow functions in ES6?
+arrow functions:- arrow functions is a modern js method and it's so clean and lexical,, and easy too .. but in a big project we dont't use arrow functions ..cause this is best for mini function
 
 #### 4) How does destructuring assignment work in ES6?
+its use for array destructuring for get the index value;
+and also usable for object destructuring for get value of a property 
+
+its accept defult value
 
 #### 5) Explain template literals in ES6. How are they different from string concatenation?
-
-## ⚙️ Functionalities 
-
-1) Category Loading 
-Load Tree Categories dynamically on the left side.
-
-2) Category Click → Tree Data 
-On clicking a category: load trees of that category.
-
-Display in a 3-column card layout.
-
-3) Card Contents 
- Each card includes:
-
-        - Image
-
-        -  Name
-
-        - Short description
-
-        - Category
-
-        - Price
-
-        - Add to Cart button
-
-4) Modal on Card Click 
-Clicking a tree name on a card opens a modal with full tree details.
-
-
-##  🧪 Challenges 
-
-
-    1) Add to Cart 
-    Clicking Add to Cart: - Adds the tree to Cart List
-                          - Shows tree name 
-
-    2) Total Calculation 
-    Calculate total price of trees in cart.
-
-    3) Remove from Cart 
-    Clicking ❌ removes tree and deducts price from total.
-
-    4) Loading Spinner
-    Show spinner while data is loading.
-
-    5) Active Button State 
-    Highlight active category button when selected.
-
-
-
-🧰 Technology Stack:
-        
-        HTML
-
-        CSS (Vanilla / Tailwind / DaisyUI)
-
-        JavaScript (Vanilla only, no frameworks)
-
-📌 Rules
-✅ At least 5 meaningful commits
-
-❌ No dummy text or Lorem Ipsum — must use relevant content
-
-
-
-
-
-## 🔗 Submission
-- **Live Link :** YOUR_DEPLOYED_URL_HERE  
-- **GitHub Private Repository:** YOUR_REPO_URL_HERE  
-
----
+template literals:- template literals is  a string writing syntex ;its use for dynamic a value ,and normal string is not usable for daynamic a value ,in normal string we not write multiple line without /n  but in template leterals we can this with using the ( ` ` ) and also we can calucation or call a functions in template literals using with ${...}

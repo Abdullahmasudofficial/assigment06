@@ -125,12 +125,17 @@ trees.forEach(tree => {
   const treeCard=document.createElement("div");
   treeCard.innerHTML=` 
   
-  <div onclick="loadModalfromApi(${tree.id})" class="" >
+  <div class="" >
          <section class="  ">
 
-         <div class="rounded-t-lg-2xl h-[190px]" >
-         <img class=" rounded-t-xl h-full w-full object-cover" src="${tree.image}" alt="">
-         </div>
+            <div onclick="loadModalfromApi(${tree.id})">
+
+
+
+
+            <div class="rounded-t-lg-2xl h-[190px]" >
+               <img class=" rounded-t-xl h-full w-full object-cover" src="${tree.image}" alt="">
+            </div>
 
          
          <div class=" p-5 rounded-b-xl bg-white">
@@ -142,12 +147,23 @@ trees.forEach(tree => {
             <p class="font-bold">$ <span> ${tree.price}</span> </p>
           </div>
       
-          <button class="text-white btn bg rounded-full w-full bg-[#15803D]">Add to Cart</button>
+
          </div>
 
 
+
+
+
+
+
+        </div>
+
+
+
+        <button class="text-white btn bg rounded-full w-full bg-[#15803D]">Add to Cart</button>
        </section>
 </div>
+
   
   
   
@@ -175,12 +191,13 @@ treeContainer.addEventListener("click",(e)=>{
 })
 
 const handalecartBox=(e)=>{
-  const nameofTree= e.target.parentNode.children[0].innerText;
-const price = e.target.parentNode.children[2].children[1].children[0].innerText;
+  
+const nameofTree=e.target.parentNode.children[0].children[1].children[0].innerText
+  
+const price =e.target.parentNode.children[0].children[1].children[2].children[1].children[0].innerText
+// console.log(price)
 
-
-
-
+alert(nameofTree + " Has been Added To the Cart ")
 cartBox.push({
   nameofTree:nameofTree,
   price:price
@@ -190,6 +207,15 @@ cartBox.push({
 
 showCartBoxInUi(cartBox)
 }
+
+
+
+
+
+
+
+
+
 
 
 const showCartBoxInUi = (cartBox) => {
@@ -291,12 +317,14 @@ aboutModal.innerHTML=`
 
          
          <div class=" p-5 rounded-b-xl bg-white">
-          <h1 class="font-bold"> ${plant.name}</h1>
-          <p class="text-sm text-gray-700" >${plant.description}  </p>
+          <h1 class="font-bold"> Plant Name: <span class="font-normal text-gray-800"> ${plant.name}</span>   </h1>
+          <h1 class="font-bold"> categorie: <span class="font-normal text-gray-800"> ${plant.category}</span> </h1>
+          
 
-          <div class="my-4 flex items-center justify-between">
-            <h1 class="text-green-800 rounded px-2 bg-[#DCFCE7]" >${plant.category}</h1>
-            <p class="font-bold">$ <span> ${plant.price}</span> </p>
+          <div class="my-4">
+          <h1 class="font-bold"> Price: <span class="font-normal text-gray-800"> ${plant.price}</span> </h1>
+            <p class="text-sm text-gray-700" >Description: <span class="font-normal text-gray-800"> ${plant.description}</span>  </p>
+            
           </div>
 
 
