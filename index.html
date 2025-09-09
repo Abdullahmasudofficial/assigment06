@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="stylesheet" href="./style.css">
+    <title>Green Earth Project</title>
+</head>
+<body class="w-full mx-auto md:w-full bg-[#F0FDF4]">
+
+  <!---------- header area design start ------ -->
+
+    <header class="w-full bg-green-700">
+        <section class="flex items-center justify-center" >
+         <div class="w-full flex justify-center  mx-auto md:w-10/12 navbar shadow-sm">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn bg-transparent mr-5  lg:hidden">
+        <svg  xmlns="http://www.w3.org/2000/svg" class="font-bold text-white h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+      <ul
+        tabindex="0"
+        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+
+
+      <li><a>About</a></li>
+      <li><a>Gallery</a></li>
+      <li><a>Plant a Tree</a></li>
+      </ul>
+    </div>
+    <a class="text-white text-xl">Green Earth</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <ul class="text-white menu menu-horizontal px-1">
+      <li><a>About</a></li>
+      <li><a>Gallery</a></li>
+      <li><a>Plant a Tree</a></li>
+    </ul>
+  </div>
+  <div class="md:navbar-end">
+    <a class="bg-[#FACC15] text-green-800  rounded-full border-none btn">Plant a Tree</a>
+  </div>
+         </div>
+        </section>
+    </header>
+ <!----------- header area design done ------ -->
+
+<main class=" md:w-full">
+    <section class="flex flex-col  bg-[#CFF0DC] md:flex-row justify-around items-center">
+        <div class="w-6/12" ><img src="./B12A06-Green-Earth/assets/hero-leaf1.png" alt=""></div>
+        <div class="flex flex-col justify-center items-center gap-5">
+            <h1 class="text-3xl text-center md:text-left md:text-5xl font-bold">Plant a Tree, Grow a Future</h1>
+            <p class="text-black px-2 text-sm md:text-lg md:text-[#1F2937]">Join our mission to plant 1 million trees and make the Earth greener for future</p>
+            <a class="text-center  bg-[#FACC15] text-green-800  rounded-full border-none btn">Get Involved</a>
+        </div>
+        <div class="w-6/12" ><img src="./B12A06-Green-Earth/assets/hero-leaf2.png" alt=""></div>
+
+    </section>
+
+
+
+
+
+<h1 class="text-center font-bold text-4xl mt-12">Choose Your Trees</h1>
+
+
+
+  <div class="p-5 flex justify-center items-center"><span id="spinner" class="hidden loader"></span></div>
+
+<section id="container" class="mt-7 mx-auto w-10/12 grid md:grid-cols-12 gap-5">
+
+        
+
+   
+    <div class=" md:col-span-3"> <h1 class=" font-bold text-xl">Categories</h1> 
+      <div><button onclick="loadallplantsData()" class="text-[#1F2937] font-semibold p-2 text-lg"> All Plants</button></div>
+    
+
+    <div id="categories-container" class= " ">
+   
+    
+    
+   
+
+    </div>
+    </div>
+
+    <div id="tree-container-in-ui"  class="mb-7 rounded gap-5 grid md:grid-cols-3 md:col-span-7">
+
+
+
+
+     </div>
+
+
+
+
+
+
+
+
+    <div class="text-center w-full bg-white rounded-lg md:col-span-2">
+      <div class="p-4">
+       <h1 class="border-b-2 border-gray-200 text-lg mb-2 font-bold text-start">Your Cart</h1>
+
+        <div  id="cart-container" >
+
+          <div id="cartBox">
+
+          </div>
+        </div>
+
+
+       <div class="border-t-2 border-gray-200 flex justify-between">
+        <h3 class="">Total</h3>
+        <p>$ <span id="totalamount">0</span></p>
+       </div>
+      </div>
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+    
+
+<script src="./index.js"></script>
+<!-- <script src="./check.js"></script> -->
+</body>
+</html>
